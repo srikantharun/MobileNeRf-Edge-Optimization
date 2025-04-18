@@ -1,0 +1,34 @@
+# MobileNeRF Edge Default Configuration
+
+# Data configuration
+data:
+  data_dir: "data/processed"
+  target_size: [256, 256]  # Height, width
+
+# Model configuration
+model:
+  pretrained_path: ""  # Path to pretrained model (leave empty for new model)
+  latent_dim: 64
+  base_channels: 32
+  num_samples: 64
+  pos_encoding_freqs: 6
+  hidden_dim: 128
+  num_layers: 4
+
+# Training configuration
+training:
+  epochs: 50
+  batch_size: 8
+  learning_rate: 0.0001
+  num_workers: 4
+  device: "cuda"  # "cuda" or "cpu"
+  output_dir: "outputs"
+  max_samples: null  # Limit samples for debugging (null for all samples)
+
+# Optimization configuration
+optimization:
+  output_dir: "optimized_models"
+  target_device: "generic"  # "generic", "jetson", "raspberrypi", "intel"
+  quantization: true
+  pruning: true
+  compile_for_opencv: true

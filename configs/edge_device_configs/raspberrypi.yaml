@@ -1,0 +1,25 @@
+# Raspberry Pi Edge Device Configuration
+
+device:
+  name: "Raspberry Pi 4B"
+  processor: "ARM Cortex-A72"
+  memory: 4  # GB
+  
+inference:
+  backend: "opencv"
+  precision: "int8"
+  batch_size: 1
+  threading:
+    num_threads: 4
+    
+camera:
+  resolution: [640, 480]
+  fps: 15
+  
+optimization:
+  target: "raspberrypi"
+  use_gpu: false
+  enable_opencl: true
+  
+power:
+  mode: "balanced"  # balanced, performance, power-save

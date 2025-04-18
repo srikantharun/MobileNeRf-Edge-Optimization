@@ -1,0 +1,25 @@
+# Intel Edge Device Configuration
+
+device:
+  name: "Intel NUC"
+  processor: "Intel Core i5"
+  memory: 8  # GB
+  
+inference:
+  backend: "openvino"
+  precision: "fp16"
+  batch_size: 1
+  threading:
+    num_threads: 4
+    
+camera:
+  resolution: [1280, 720]
+  fps: 30
+  
+optimization:
+  target: "intel"
+  use_gpu: true
+  enable_openvino: true
+  
+power:
+  mode: "performance"  # performance, balanced, power-save

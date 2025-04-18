@@ -1,0 +1,26 @@
+# Jetson Nano Edge Device Configuration
+
+device:
+  name: "NVIDIA Jetson Nano"
+  compute_capability: "5.3"
+  memory: 4  # GB
+  
+inference:
+  backend: "tensorrt"
+  precision: "fp16"
+  batch_size: 1
+  threading:
+    num_threads: 4
+    
+camera:
+  resolution: [640, 480]
+  fps: 30
+  
+optimization:
+  target: "jetson"
+  use_gpu: true
+  enable_tensorrt: true
+  tensorrt_workspace: 1  # GB
+  
+power:
+  mode: "MAX-N"  # MAX-N, MAX-Q, MAX-P
